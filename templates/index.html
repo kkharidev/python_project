@@ -1,0 +1,178 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/5056179b42b174f.jpg' %}" type="image/x-icon">
+</head>
+<body class="bg-dark" >
+    <section class="header-section">
+        <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                   <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">EVENTS</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          <li class="nav-item ps-2 pe-2">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          </li>
+
+                          {% if user.is_authenticated %}
+                          <li class="nav-item ps-2 pe-2">
+                            <p class="nav-link" href="#">Hello, {{user.username}}</p>
+                          </li>
+                          <li class="nav-item ps-2 pe-2">
+                            <a class="nav-link" href="accounts/logout">logout</a>
+                          </li>
+
+                          {% else %}
+                          <li class="nav-item ps-2 pe-2">
+                            <a class="nav-link" href="accounts/register">Register</a>
+                          </li>
+                          <li class="nav-item ps-2 pe-2">
+                            <a class="nav-link" href="accounts/login">Login</a>
+                          </li>
+                          {% endif %}
+
+
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+               </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="home-section" >
+      <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner" >
+          {% for mains in mains %}
+          <div class="carousel-item active">
+            <img style="height: 24em;" src="{{mains.eventimg.url}}" class=" d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-align-center text-white">
+              <h5>{{mains.eventName}}</h5>
+              <p>{{mains.eventdesc}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+      </div>
+    </section>
+
+
+
+    <section class="event-secction text-center pt-5 self-centre">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="font-weight-bold text-white">Events</h3>
+          </div>
+        </div>  
+      </div>  
+      
+
+
+      <div class="container">
+        <div class="row">
+
+          {% for evnts in evnts reversed %}  
+
+          <div class="col-lg-4 col-md-6 col-sm-12 col-12 pt-5 ps-4 float-right">
+            <div class="card" style="width: 18rem;">
+              <img src="{{evnts.img.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{evnts.event}}</h5>
+                <p class="card-text">{{evnts.desc}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">time:{{evnts.time}}</li>
+                <li class="list-group-item">date:{{evnts.date}}</li>
+                <li class="list-group-item">deadline:{{evnts.deadline}}</li>
+              </ul>
+              <div class="card-body">
+
+                {% if user.is_authenticated %}
+                <a href="{{evnts.gform_link}}" class="btn btn-primary">Register</a>
+                {% else %}
+                <a href="accounts/login" class="btn btn-primary">Register</a>
+                {% endif %}
+                
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+        </div>
+      </div>
+
+
+      
+
+
+
+        
+     
+    </section>
+
+
+
+    <section class="footer-section pt-5">
+      <!-- Footer -->
+      <footer class="text-center text-white bg-dark">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: CTA -->
+          <section class="">
+            <p class="justify-content-center align-items-center">
+              {% if user.is_authenticated %}
+                <a href="/accounts/logout"><button type="button" class="btn btn-outline-light btn-rounded">
+                  logout
+                </button>  </a>
+              {% else %}
+                <a href="/accounts/login"><button type="button" class="btn btn-outline-light btn-rounded">
+                  Login!
+                </button>  </a>
+                <a href="/accounts/register"><button type="button" class="btn btn-outline-light btn-rounded">
+                  Sign up!
+                </button></a>
+              {% endif %}
+              
+            </p>
+          </section>
+          <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="#">Events</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </section>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+</body>
+</html>

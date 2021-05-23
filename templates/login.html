@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <title>Events</title>
+    <link rel="shortcut icon" href="{% static 'images/5056179b42b174f.jpg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body style="background-color: black;">
+  
+
+  
+    <div class="text-center" style="padding:50px 0">
+      <div class="logo">login</div>
+      <!-- Main Form -->
+      <div class="login-form-1">
+        <form id="login-form" class="text-left" action="" method="POST">
+
+          {% csrf_token %}
+
+          <div class="login-form-main-message"></div>
+          <div class="main-login-form">
+            <div class="login-group">
+              <div class="form-group">
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="username">
+              </div>
+              <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="password">
+              </div>
+            </div>
+            <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+          </div>
+          <div class="etc-login-form">
+            <p>new user? <a href="/accounts/register">create new account</a></p>
+          </div>
+        </form>
+
+        {% for message in messages %}
+
+        <h2 class="text-danger">{{ message }}</h2>
+
+        {% endfor %}
+
+      </div>
+      <!-- end:Main Form -->
+    </div>
+    <script src="{//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
