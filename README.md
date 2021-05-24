@@ -20,7 +20,7 @@ A user can only register for an event if he is logged in.
 
 <h2>  WHEN USER LOGGED IN</h2>
 
-![](/imagesreadme/login.png)
+![](/imagesreadme/userloggedin.png)
 
 <h2>ADMIN-PANEL </h2>
 <br>
