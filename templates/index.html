@@ -64,10 +64,10 @@
         <div class="carousel-inner" >
           {% for mains in mains %}
           <div class="carousel-item active">
-            <img style="height: 24em;" src="{{mains.eventimg.url}}" class=" d-block w-100" alt="...">
+            <img style="height: 24em;" src="{{mains.mainimg.url}}" class=" d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block text-align-center text-white">
-              <h5>{{mains.eventName}}</h5>
-              <p>{{mains.eventdesc}}</p>
+              <h5>{{mains.heading}}</h5>
+              <p>{{mains.subheading}}</p>
             </div>
           </div>
           {% endfor %}
@@ -82,7 +82,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="font-weight-bold text-white">Events</h3>
+            <h3 class="font-weight-bold text-white">Upcoming Events</h3>
           </div>
         </div>  
       </div>  
@@ -102,14 +102,14 @@
                 <p class="card-text">{{evnts.desc}}</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">time:{{evnts.time}}</li>
-                <li class="list-group-item">date:{{evnts.date}}</li>
-                <li class="list-group-item">deadline:{{evnts.deadline}}</li>
+                <li class="list-group-item">Time:{{evnts.time}}</li>
+                <li class="list-group-item">Date:{{evnts.date}}</li>
+                <li class="list-group-item">Deadline:{{evnts.deadline}}</li>
               </ul>
               <div class="card-body">
 
                 {% if user.is_authenticated %}
-                <a href="{{evnts.gform_link}}" class="btn btn-primary">Register</a>
+                <a href="{{evnts.gform_link}}" target="_blank"  class="btn btn-primary">Register</a>
                 {% else %}
                 <a href="accounts/login" class="btn btn-primary">Register</a>
                 {% endif %}

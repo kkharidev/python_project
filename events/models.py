@@ -13,6 +13,6 @@ class Events(models.Model):
 
 
 class Mainbanner(models.Model):
-    eventimg = models.ImageField(upload_to='pics')
-    eventName = models.CharField(max_length=100)
-    eventdesc = models.TextField()
+    mainimg = models.ImageField(upload_to='pics')
+    heading = models.CharField(max_length=100)
+    subheading = models.TextField()
