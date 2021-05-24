@@ -23,6 +23,7 @@ A user can only register for an event if he is logged in.
 ![](/imagesreadme/userloggedin.png)
 
 <h2>ADMIN-PANEL </h2>
+<h3>Use /admin on the events website url to go to admin panel </h3>
 <br>
 An admin of the site can add or delete events/main banner using the admin panel.An admin can give other users<br>
 various types of permission for adding events,login to admin pannel etc.
@@ -47,4 +48,4 @@ Add main banner for the site.
 <br>
 Add main banner for the site.
 
-![](/imagesreadme/mainbanner.png)
+![](/imagesreadme/after.png)
