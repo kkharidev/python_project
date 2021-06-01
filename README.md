@@ -1,7 +1,18 @@
+![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 # python_project
+EVENT
 <h2>Event Management System</h2>
 <h3>Using Django And Postgresql(for database)</h3>
 
+## Team members
+1. K K Haridev[https://github.com/KKHaridev]
+2. Vishnu V [https://github.com/VISHNU02V]
+
+## Team Id
+BFH/recinldG4Qt6HIpIU/2021
+
+## Link to product walkthrough
+[https://www.loom.com/share/8e2caba2b8a047018f0c31aeb51cbd57]
 
 
 <h2>MAIN </h2>
